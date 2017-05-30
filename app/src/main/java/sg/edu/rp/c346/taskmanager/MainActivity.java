@@ -30,7 +30,13 @@ public class MainActivity extends AppCompatActivity {
         al = new ArrayList<String>();
 
         DBHelper dbh = new DBHelper(MainActivity.this);
-        al = dbh.getTaskContent();
+        al.clear();
+        al.addAll(dbh.getAllTask());
+        dbh.close();
+
+
+        lv.setAdapter(aa);
+
 
 
 
@@ -47,4 +53,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 }
